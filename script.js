@@ -1,5 +1,18 @@
 document.addEventListener('contextmenu', event => event.preventDefault());
 
+
+let fullscreened = false;
+let fullscreenbtn = document.querySelector("#fullscreen")
+fullscreenbtn.addEventListener("click", fullscreen)
+
+
+function fullscreen() {
+    fullscreened = !fullscreened;
+    fullscreenbtn.classList.toggle("fullscreened")
+    if (fullscreened) root.requestFullscreen()
+    else document.exitFullscreen();
+}
+
 let team1point = document.querySelector("#team-1").children[0];
 let team2point = document.querySelector("#team-2").children[0];
 

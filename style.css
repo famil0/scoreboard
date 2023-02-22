@@ -10,7 +10,7 @@ body {
     font-family: 'Signika Negative', sans-serif;
 }
 
-#settings {
+#settings, #fullscreen {
     width: 50px;
     position: absolute;
     top: 15px;
@@ -18,6 +18,10 @@ body {
     transition: 0.2s;
     cursor: pointer;
     z-index: 100;
+}
+
+#settings {
+    top: 75px;
 }
 
 #settings:hover {
@@ -210,4 +214,8 @@ body {
     height: 100%;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+.fullscreened {
+    content: url(imgs/exitfullscreen.svg);
 }
