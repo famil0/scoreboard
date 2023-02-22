@@ -119,22 +119,25 @@ function refresh_teams() {
 }
 
 function load() {
-    team1nametextbox.value = localStorage.getItem("team1name");
-    team2nametextbox.value = localStorage.getItem("team2name");
+    try {
+        team1nametextbox.value = localStorage.getItem("team1name");
+        team2nametextbox.value = localStorage.getItem("team2name");
 
-    team1colorpicker.value = localStorage.getItem("team1color");
-    team2colorpicker.value = localStorage.getItem("team2color");
+        team1colorpicker.value = localStorage.getItem("team1color");
+        team2colorpicker.value = localStorage.getItem("team2color");
 
-    team1point.innerHTML = localStorage.getItem("team1point");
-    team2point.innerHTML = localStorage.getItem("team2point");
+        team1point.innerHTML = localStorage.getItem("team1point");
+        team2point.innerHTML = localStorage.getItem("team2point");
 
-    team1subpoint.innerHTML = localStorage.getItem("team1subpoint");
-    team2subpoint.innerHTML = localStorage.getItem("team2subpoint");
+        team1subpoint.innerHTML = localStorage.getItem("team1subpoint");
+        team2subpoint.innerHTML = localStorage.getItem("team2subpoint");
 
-    time_in_seconds = localStorage.getItem("starttime");
-    timer.innerHTML = seconds2HHMMSS(time_in_seconds);
+        time_in_seconds = localStorage.getItem("starttime");
+        timer.innerHTML = seconds2HHMMSS(time_in_seconds);
 
-    starttimetextbox.value = seconds2HHMMSS(time_in_seconds);
+        starttimetextbox.value = seconds2HHMMSS(time_in_seconds);
+    }
+    catch (e) {}
 
 }
 
