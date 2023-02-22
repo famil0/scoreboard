@@ -38,7 +38,7 @@ let starttimetextbox = document.querySelector("#starttime");
 
 settings.addEventListener("click", settingsclick);
 
-let time_in_seconds = 70 * 60;
+let time_in_seconds = 50 * 60;
 let timer = document.querySelector("#timer");
 let running = false;
 
@@ -119,10 +119,12 @@ function refresh_teams() {
 }
 
 function load() {
-    try {
+    if ("team1name" in localStorage) {
+
         team1nametextbox.value = localStorage.getItem("team1name");
         team2nametextbox.value = localStorage.getItem("team2name");
-
+        
+        
         team1colorpicker.value = localStorage.getItem("team1color");
         team2colorpicker.value = localStorage.getItem("team2color");
 
@@ -131,13 +133,12 @@ function load() {
 
         team1subpoint.innerHTML = localStorage.getItem("team1subpoint");
         team2subpoint.innerHTML = localStorage.getItem("team2subpoint");
-
+        
         time_in_seconds = localStorage.getItem("starttime");
-        timer.innerHTML = seconds2HHMMSS(time_in_seconds);
-
+        
         starttimetextbox.value = seconds2HHMMSS(time_in_seconds);
     }
-    catch (e) {}
+    timer.innerHTML = seconds2HHMMSS(time_in_seconds);
 
 }
 
